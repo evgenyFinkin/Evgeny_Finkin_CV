@@ -18,6 +18,8 @@ public class Education extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.education, container, false);
+        //TODO: add content
+
         return view;
     }
 }

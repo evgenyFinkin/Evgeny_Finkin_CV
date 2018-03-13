@@ -10,8 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import com.example.jonfi.evgenyfinkincv.Constants;
-
 import com.example.jonfi.evgenyfinkincv.Fragments.Bio;
 import com.example.jonfi.evgenyfinkincv.Fragments.Education;
 import com.example.jonfi.evgenyfinkincv.Fragments.Experience;
@@ -32,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate starting");
 
+
+        //TODO: build a better UI
+
+        mSectionPageAdapter = new SectionPageAdapter (getSupportFragmentManager());
 
         FabSpeedDial mFabSpeedDial = (FabSpeedDial) findViewById(R.id.fabSpeedDail);
         mFabSpeedDial.setMenuListener(new FabSpeedDial.MenuListener() {
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupVievPager(ViewPager viewPager)   {
+        //TODO: remove the title and add drawable instead
         SectionPageAdapter sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
         sectionPageAdapter.addFragment(new Bio(), "Bio");
         sectionPageAdapter.addFragment(new Education(), "Education");
