@@ -1,27 +1,13 @@
 package com.example.jonfi.evgenyfinkincv;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TableLayout;
-import android.widget.TextView;
-
-import com.example.jonfi.evgenyfinkincv.Fragments.ConnectInformation;
+import com.example.jonfi.evgenyfinkincv.Fragments.Bio;
 import com.example.jonfi.evgenyfinkincv.Fragments.Education;
 import com.example.jonfi.evgenyfinkincv.Fragments.Experience;
 import com.example.jonfi.evgenyfinkincv.Fragments.SkillsAndProjects;
@@ -49,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupVievPager(ViewPager viewPager)   {
         SectionPageAdapter sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
-        sectionPageAdapter.addFragment(new ConnectInformation(), "ConnectInformation");
+        sectionPageAdapter.addFragment(new Bio(), "Bio");
         sectionPageAdapter.addFragment(new Education(), "Education");
         sectionPageAdapter.addFragment(new Experience(), "Experience");
         sectionPageAdapter.addFragment(new SkillsAndProjects(), "Skills&Projects");
