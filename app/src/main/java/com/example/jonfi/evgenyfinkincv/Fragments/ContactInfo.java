@@ -13,11 +13,11 @@ import com.example.jonfi.evgenyfinkincv.R;
  * Created by jonfi on 06/03/2018.
  */
 
-public class Bio extends Fragment {
-    private static final String TAG = "Bio";
+public class ContactInfo extends Fragment {
+    private static final String TAG = "ContactInfo";
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bio, container, false);
+        View view = inflater.inflate(R.layout.contact_info, container, false);
         //TODO: add content
 
         return view;

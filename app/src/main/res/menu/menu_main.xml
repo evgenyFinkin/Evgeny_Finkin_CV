@@ -3,11 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.jonfi.evgenyfinkincv.MainActivity">
     <item
+        android:orderInCategory="1"
         android:id="@+id/action_call"
         android:icon="@drawable/ic_call"
         android:title="Call: 054-8062240"/>
     <item
+        android:orderInCategory="2"
         android:id="@+id/action_email"
         android:icon="@drawable/ic_email"
         android:title="Email: jon.finkin@gmail.com"/>
+    <item
+        android:orderInCategory="3"
+        android:id="@+id/action_li"
+        android:icon="@drawable/ic_linkedin_01"
+        android:title="Linkedin Page"/>
 </menu>

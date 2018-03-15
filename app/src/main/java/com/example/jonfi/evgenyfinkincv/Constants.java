@@ -5,6 +5,7 @@ public class Constants {
     private static final String[] mMailAddress = {"jon.finkin@gmail.com"};
     private static final String mSubject = "Schedule a job interview";
     private static final String mBody = "We were very impressed with your abilities and we are interested in setting up a job interview.";
+    private static final String mLinkedinUrl = "https://www.linkedin.com/in/evgeny-finkin-3a1809b0/";
 
     public static String getmPhoneNum() {
         return mPhoneNum;
@@ -21,4 +22,9 @@ public class Constants {
     public static String getmBody() {
         return mBody;
     }
+
+    public static String getmLinkedinUrl() {
+        return mLinkedinUrl;
+    }
+
 }

@@ -10,7 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import com.example.jonfi.evgenyfinkincv.Fragments.Bio;
+
+import com.example.jonfi.evgenyfinkincv.Fragments.ContactInfo;
 import com.example.jonfi.evgenyfinkincv.Fragments.Education;
 import com.example.jonfi.evgenyfinkincv.Fragments.Experience;
 import com.example.jonfi.evgenyfinkincv.Fragments.SkillsAndProjects;
@@ -62,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
                         if (emailIntent.resolveActivity(getPackageManager()) != null)    {
                             startActivity(emailIntent);
                         }
+                    case R.id.action_li:
+                        Uri webpage = Uri.parse(Constants.getmLinkedinUrl());
+                        Intent liIntent = new Intent(Intent.ACTION_VIEW, webpage);
+                        if (liIntent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(liIntent);
+                        }
                         break;
                         default:
                             return true;
@@ -86,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupVievPager(ViewPager viewPager)   {
         //TODO: remove the title and add drawable instead
         SectionPageAdapter sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
-        sectionPageAdapter.addFragment(new Bio(), "Bio");
+//        sectionPageAdapter.addFragment(new ContactInfo(), "ContactInfo");
         sectionPageAdapter.addFragment(new Education(), "Education");
         sectionPageAdapter.addFragment(new Experience(), "Experience");
         sectionPageAdapter.addFragment(new SkillsAndProjects(), "Skills&Projects");

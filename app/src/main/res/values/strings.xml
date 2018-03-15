@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">EvgenyFinkinCV</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="phon_text" translatable="false">054-8062240</string>
+    <string name="mail_text" translatable="false">jon@gmail.com</string>
+    <string name="title">AQbit 2016-2017</string>
+    <string name="subtitle">CTO and founder.</string>
 </resources>
