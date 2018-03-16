@@ -11,10 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.jonfi.evgenyfinkincv.Fragments.ContactInfo;
 import com.example.jonfi.evgenyfinkincv.Fragments.Education;
 import com.example.jonfi.evgenyfinkincv.Fragments.Experience;
 import com.example.jonfi.evgenyfinkincv.Fragments.SkillsAndProjects;
+import com.example.jonfi.evgenyfinkincv.Service.SectionPageAdapter;
 
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         if (emailIntent.resolveActivity(getPackageManager()) != null)    {
                             startActivity(emailIntent);
                         }
+                        break;
                     case R.id.action_li:
                         Uri webpage = Uri.parse(Constants.getmLinkedinUrl());
                         Intent liIntent = new Intent(Intent.ACTION_VIEW, webpage);

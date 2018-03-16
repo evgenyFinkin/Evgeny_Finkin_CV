@@ -29,4 +29,6 @@ dependencies {
 
     //Custom Libraries
     compile 'io.github.yavski:fab-speed-dial:1.0.6'
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.4.0'
 }

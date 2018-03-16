@@ -1,4 +1,4 @@
-package com.example.jonfi.evgenyfinkincv;
+package com.example.jonfi.evgenyfinkincv.Service;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
