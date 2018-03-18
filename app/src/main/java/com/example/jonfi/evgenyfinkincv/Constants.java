@@ -6,8 +6,7 @@ public class Constants {
     private static final String mSubject = "Schedule a job interview";
     private static final String mBody = "We were very impressed with your abilities and we are interested in setting up a job interview.";
     private static final String mLinkedinUrl = "https://www.linkedin.com/in/evgeny-finkin-3a1809b0/";
-    private static final String mMyName = "evgenyFinkin";
-    private static final String mGitUrl = "http://api.github.com/";
+    private static final String mGitUrl = "http://api.github.com";
 
     public static String getmPhoneNum() {
         return mPhoneNum;
@@ -27,10 +26,6 @@ public class Constants {
 
     public static String getmLinkedinUrl() {
         return mLinkedinUrl;
-    }
-
-    public static String getmMyName() {
-        return mMyName;
     }
 
     public static String getmGitUrl() {

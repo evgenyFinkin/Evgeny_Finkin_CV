@@ -1,8 +1,12 @@
 package com.example.jonfi.evgenyfinkincv.Fragments;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +15,11 @@ import android.widget.Toast;
 
 import com.example.jonfi.evgenyfinkincv.Constants;
 import com.example.jonfi.evgenyfinkincv.GitHubRepo;
+import com.example.jonfi.evgenyfinkincv.MainActivity;
 import com.example.jonfi.evgenyfinkincv.Service.GitHubRepoAdapter;
 import com.example.jonfi.evgenyfinkincv.Interfaces.GithubClient;
 import com.example.jonfi.evgenyfinkincv.R;
+import com.example.jonfi.evgenyfinkincv.Service.GithubApiBuilder;
 
 import java.util.List;
 
@@ -30,36 +36,49 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SkillsAndProjects extends Fragment {
     private static final String TAG = "SkillsAndProjects";
 
-    private ListView gitlist;
+    private RecyclerView gitlist;
+    List<GitHubRepo> gitHubRepos;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.skills_projects, container, false);
 
-        gitlist = (ListView) view.findViewById(R.id.git_list);
+        gitlist = (RecyclerView) view.findViewById(R.id.git_list);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl(Constants.getmGitUrl())
-                .addConverterFactory(GsonConverterFactory.create());
+        getUserListData();
 
-        Retrofit retrofit = builder.build();
-        GithubClient client = retrofit.create(GithubClient.class);
-        Call<List<GitHubRepo>> call = client.mMyrepos(Constants.getmMyName());
-        call.enqueue(new Callback<List<GitHubRepo>>() {
+        return view;
+    }
+
+    private void getUserListData() {
+        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please Wait");
+        progressDialog.show();
+
+        (GithubApiBuilder.getClient().getRepo()).enqueue(new Callback<List<GitHubRepo>>() {
             @Override
             public void onResponse(Call<List<GitHubRepo>> call, Response<List<GitHubRepo>> response) {
-                List<GitHubRepo> repos = response.body();
+                Log.d("responseGET", response.body().get(0).getName());
+                progressDialog.dismiss();
+                gitHubRepos = response.body();
+                setDataInRecyclerView();
 
-                gitlist.setAdapter(new GitHubRepoAdapter(getActivity(), repos));
             }
 
             @Override
             public void onFailure(Call<List<GitHubRepo>> call, Throwable t) {
-                Toast.makeText(getActivity(),"error",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), t.toString(), Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
             }
         });
+    }
 
-        return view;
-
+    private void setDataInRecyclerView() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        gitlist.setLayoutManager(linearLayoutManager);
+        GitHubRepoAdapter usersAdapter = new GitHubRepoAdapter(getActivity(), gitHubRepos);
+        gitlist.setAdapter(usersAdapter);
     }
 }
