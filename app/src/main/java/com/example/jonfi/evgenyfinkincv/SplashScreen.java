@@ -19,13 +19,18 @@ public class SplashScreen extends AppCompatActivity {
         EasySplashScreen config = new EasySplashScreen(SplashScreen.this)
                 .withFullScreen()
                 .withTargetActivity(MainActivity.class)
-                .withSplashTimeOut(5000)
-                .withBackgroundResource(android.R.color.holo_red_light)
+                .withSplashTimeOut(7500)
+                .withBackgroundResource(android.R.color.background_light)
                 .withHeaderText("Welcome")
                 .withFooterText("Copyright 2018")
                 .withBeforeLogoText("Evgeny Finkin production")
                 .withLogo(R.drawable.my_pic)
                 .withAfterLogoText("For contact, click on the message icon at the bottom.");
+
+
+
+
+
 
         View view = config.create();
         setContentView(view);

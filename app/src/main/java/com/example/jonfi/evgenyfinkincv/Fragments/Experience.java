@@ -18,7 +18,7 @@ public class Experience extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.experience, container, false);
-        //TODO: add content
+        //DONE: add content
 
         return view;
     }
