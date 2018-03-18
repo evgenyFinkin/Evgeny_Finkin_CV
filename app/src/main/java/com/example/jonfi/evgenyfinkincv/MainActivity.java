@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupVievPager(ViewPager viewPager)   {
         //TODO: remove the title and add drawable instead
         SectionPageAdapter sectionPageAdapter = new SectionPageAdapter(getSupportFragmentManager());
-//        sectionPageAdapter.addFragment(new ContactInfo(), "ContactInfo");
         sectionPageAdapter.addFragment(new Education(), "Education");
         sectionPageAdapter.addFragment(new Experience(), "Experience");
         sectionPageAdapter.addFragment(new SkillsAndProjects(), "Skills&Projects");
