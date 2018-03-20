@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
                 .withFooterText("Copyright 2018")
                 .withBeforeLogoText("Evgeny Finkin production")
                 .withLogo(R.drawable.my_pic)
-                .withAfterLogoText("For contact, click on the message icon at the bottom.");
+                .withAfterLogoText("TO contact me, click on the message icon at the bottom right.");
 
 
 

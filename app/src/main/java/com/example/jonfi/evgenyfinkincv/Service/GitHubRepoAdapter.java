@@ -45,9 +45,7 @@ public class GitHubRepoAdapter extends RecyclerView.Adapter<GitHubRepoAdapter.Us
         }
 
     @Override
-    public int getItemCount() {
-        return gitHubRepos.size();
-    }
+    public int getItemCount() {return gitHubRepos.size();}
 
     class UsersViewHolder extends RecyclerView.ViewHolder {
         TextView list_item_name, list_item_html_url;
@@ -58,5 +56,4 @@ public class GitHubRepoAdapter extends RecyclerView.Adapter<GitHubRepoAdapter.Us
             list_item_html_url = (TextView) itemView.findViewById(R.id.list_item_html_url);
         }
     }
-
 }

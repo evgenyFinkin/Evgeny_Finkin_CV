@@ -17,7 +17,7 @@ public class GithubApiBuilder {
         // change your base URL
         if (retrofit==null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(Constants.getmGitUrl())
+                    .baseUrl(Constants.getGitUrl())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
